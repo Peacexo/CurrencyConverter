@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void convertCurrency(View view) {
-        Log.i(TAG, "covertCurrency()");
+//        Log.i(TAG, "covertCurrency()");
 
         EditText inputView = findViewById(R.id.entryId);
 
