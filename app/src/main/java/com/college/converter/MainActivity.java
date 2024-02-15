@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.view.LayoutInflater;
+
+import com.college.converter.databinding.ActivityMainBinding;
+
+import java.util.zip.Inflater;
 
 /*
     TODOs:
@@ -25,19 +30,26 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     static private final Float CONVERSION_RATE = 0.80F;
+
     static final String TAG = "MainActivity";
+
+    ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.w(TAG, "Enter onCreate()");
 
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
-
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         Button buttonConvert = findViewById(R.id.convertButton);
-
         buttonConvert.setOnClickListener( view ->  {
             convertCurrency(view);
         } );
+
+
     }
 
     public void convertCurrency(View view) {
@@ -54,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
             Float resultFloat = inputAmountDecimal * CONVERSION_RATE;
 
-            resultView.setText( resultFloat + " Euros" );
+            String resultString = getString(R.string.result_euros, resultFloat);
+            resultView.setText(resultString);
         }
     }
 }
