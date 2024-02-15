@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     static final String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "Enter onCreate()");
+        Log.w(TAG, "Enter onCreate()");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void convertCurrency(View view) {
-//        Log.i(TAG, "covertCurrency()");
+        Log.w(TAG, "covertCurrency()");
 
         EditText inputView = findViewById(R.id.entryId);
 
